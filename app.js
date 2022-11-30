@@ -5,14 +5,11 @@ const showResult = document.querySelector('.result');
 
 /* Pegando respostas e colocando as que o usuário marcou em um array */
 let score = 0;
+
 const getUserAnswers = () => {
-	let userAnswers = [];
-
-	correctAnswers.forEach((_, index) => {
-		const userAnswer = form[`inputQuestion${index + 1}`].value;
-		userAnswers.push(userAnswer)
+	const userAnswers = correctAnswers.map((_, index) => {
+		 return form[`inputQuestion${index + 1}`].value;
 	});
-
 	return userAnswers;
 }
 
